@@ -34,7 +34,7 @@ public class usuarioServiciosImple implements usuarioServicios{
 		usuario usuario = usuRepo.findByEmail(username);
 		
 		if (usuario == null) {
-			throw new UsernameNotFoundException("Usuario o password inválidos");}
+			throw new UsernameNotFoundException("Usuario o password inválidos"); }
 		
 		List<GrantedAuthority> roles = new ArrayList<>();
         roles.add(new SimpleGrantedAuthority(usuario.getRol().getNombre()));

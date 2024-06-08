@@ -12,18 +12,14 @@ import lombok.NoArgsConstructor;
 
 @Data @AllArgsConstructor @NoArgsConstructor
 @Entity
-@Table(name = "rol")
-public class rol {
+@Table(name = "ubigeo")
+public class ubigeo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	private String nombre;
 	
-	public rol(String nombre) {
-		super();
-		this.nombre = nombre;
-	}
+	private String distrito;
+	private String ubicacion;
 
 }

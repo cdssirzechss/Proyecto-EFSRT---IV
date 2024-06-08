@@ -35,7 +35,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/registro**","/js/**","/css/**","/img/**").permitAll()
-		.antMatchers("").hasRole(null)  // esto es para darle acceso a vistas dependiendo el rol 
 		.anyRequest().authenticated()
 		.and()
 		.formLogin()
