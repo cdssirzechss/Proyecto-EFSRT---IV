@@ -41,4 +41,9 @@ public class usuarioServiciosImple implements usuarioServicios{
 		return new User(usuario.getEmail(), usuario.getPassword() , roles);
 	}
 
+	@Override
+	public List<usuario> listaporrol(String nombre) {
+		return usuRepo.findByRolNombre(nombre);
+	}
+
 }

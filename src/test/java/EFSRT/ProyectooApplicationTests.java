@@ -28,8 +28,8 @@ class ProyectooApplicationTests {
 	@Test
 	void IngresarValores() {
 		
-		rol rol1 = rolRepositorio.save(new rol("Admin"));
-		rol rol2 = rolRepositorio.save(new rol("Usuario"));
+		rol rol1 = rolRepositorio.save(new rol("admin"));
+		rol rol2 = rolRepositorio.save(new rol("usuario"));
 		
 		usuario usuario = new usuario();
 		usuario.setNombre("Jhordan");
@@ -46,6 +46,22 @@ class ProyectooApplicationTests {
 		usuario.setUbigeo(ubi);
 		
 		usuarioRepositorio.save(usuario);
+		
+		usuario usuario1 = new usuario();
+		usuario1.setNombre("Jhordan");
+		usuario1.setApellido("Via Pese");
+		usuario1.setEmail("usuario@gmail.com");
+		usuario1.setPassword(secu.passwordEncoder().encode("usuario"));
+		usuario1.setDni("13245645");
+		usuario1.setCelular("132456798");
+		usuario1.setRol(rol2);
+		
+		ubigeo ubi2 = new ubigeo();
+		ubi2.setDistrito("Lima");
+		ubi2.setUbicacion("En mi casa");
+		usuario.setUbigeo(ubi2);
+		
+		usuarioRepositorio.save(usuario1);
 		
 	}
 
