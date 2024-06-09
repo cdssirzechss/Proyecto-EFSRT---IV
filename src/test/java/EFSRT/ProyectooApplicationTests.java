@@ -59,7 +59,7 @@ class ProyectooApplicationTests {
 		ubigeo ubi2 = new ubigeo();
 		ubi2.setDistrito("Lima");
 		ubi2.setUbicacion("En mi casa");
-		usuario.setUbigeo(ubi2);
+		usuario1.setUbigeo(ubi2);
 		
 		usuarioRepositorio.save(usuario1);
 		
