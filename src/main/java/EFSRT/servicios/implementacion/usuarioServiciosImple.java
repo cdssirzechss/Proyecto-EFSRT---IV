@@ -46,4 +46,19 @@ public class usuarioServiciosImple implements usuarioServicios{
 		return usuRepo.findByRolNombre(nombre);
 	}
 
+	public usuario create(usuario usuario) {
+		
+		return usuRepo.save(usuario);
+		
+	}
+
+	public usuario obtenerusuarioporid(Long id) {
+		// TODO Auto-generated method stub
+		return usuRepo.findById(id).orElseThrow(() -> new RuntimeException("usuario no encontrado con ID: " + id));
+	}
+
+	public void eliminar(Long id) {
+		usuRepo.deleteById(id);
+	}
+
 }

@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LoginController {
 
-	@Autowired
-	private LoginController repoUsu;
-	
 	@GetMapping("/login")
 	public String iniciarSesion() {
 		return "login";
