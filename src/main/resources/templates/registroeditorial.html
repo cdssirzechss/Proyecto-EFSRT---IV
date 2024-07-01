@@ -71,12 +71,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 mx-auto">
-				<div th:if="${param.fallo}">
-					<div class="alert alert-info">Ese email ya esta en uso</div>
-				</div>
 
 				<h1>Regístrate</h1>
-				<form th:action="@{/usuario/registro}" method="post" th:object="${usuario}">
+				<form th:action="@{/editorial/registro}" method="post" th:object="${editorial}">
 					<div class="form-group" th:if="${editar}">
 						<label class="control-label" for="id">ID : </label>
 						<input id="id" type="text" class="form-control" th:field="*{id}" readonly autofocus="autofocus">
@@ -87,36 +84,14 @@
 							autofocus="autofocus">
 					</div>
 					<div class="form-group">
-						<label class="control-label" for="apellido">Apellido : </label>
-						<input id="apellido" class="form-control" th:field="*{apellido}" required autofocus="autofocus">
+						<label class="control-label" for="descripcion">Descripcion:</label>
+						<textarea id="descripcion" class="form-control" name="descripcion" th:field="*{descripcion}"
+							autofocus></textarea>
 					</div>
 					<div class="form-group">
-						<label class="control-label" for="email">Email : </label>
-						<input id="email" type="email" class="form-control" th:field="*{email}" required
+						<label class="control-label" for="telefono">Telefono : </label>
+						<input id="telefono" type="text" class="form-control" th:field="*{telefono}" required
 							autofocus="autofocus">
-					</div>
-					<div class="form-group">
-						<label class="control-label" for="dni">Contraseña : </label>
-						<input id="password" type="password" class="form-control" th:field="*{password}"
-							th:required="${contra}" autofocus="autofocus">
-						<h6 th:if="${editar}">Si usted requiere cambiar la contraseña ingrese nueva contraseña de lo
-							contrario , no ingrese nada en este campo</h4>
-					</div>
-					<div class="form-group">
-						<label class="control-label" for="dni">DNI : </label>
-						<input id="dni" type="text" class="form-control" th:field="*{dni}" required
-							autofocus="autofocus">
-					</div>
-					<div class="form-group">
-						<label class="control-label" for="celular">Celular : </label>
-						<input id="celular" type="text" class="form-control" th:field="*{celular}" required
-							autofocus="autofocus">
-					</div>
-					<div class="form-group" style="display: none;">
-						<label class="control-label" for="rol">Rol :</label>
-						<select id="rol" class="form-control" th:field="*{rol}">
-							<option th:value="${rol.id}" , th:text="${rol.nombre}"></option>
-						</select>
 					</div>
 					<div class="form-group">
 						<label class="control-label" for="distrito">Distrito : </label>
@@ -175,9 +150,6 @@
 						<button type="submit" class="btn btn-success">Guardar</button>
 						<a th:unless="${fuera}" style="margin-left: 10%;" onclick="window.history.back()"
 							class="btn btn-secondary">Volver</a>
-						<th:block th:if="${fuera}">
-							<span>Si estás registrado <a th:href="@{/login}">inicia sesión aquí</a></span>
-						</th:block>
 					</div>
 				</form>
 

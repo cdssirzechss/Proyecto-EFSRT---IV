@@ -26,6 +26,7 @@ public class libro {
 	
 	private String descripcion;
 	private String titulo;
+	private String img;
 	
 	@ManyToOne
     @JoinColumn(name = "editorial_id" , referencedColumnName = "id")

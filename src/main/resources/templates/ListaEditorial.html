@@ -71,7 +71,7 @@
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item" sec:authorize="isAuthenticated()">
-						<a class="nav-link" th:href="@{/usuario/registro}">Agregar cuenta</a>
+						<a class="nav-link" th:href="@{/editorial/registro}">Agregar cuenta</a>
 					</li>
 					<li class="nav-item" sec:authorize="isAuthenticated()">
 						<a class="nav-link" th:href="@{/logout}">Cerrar sesión</a>
@@ -82,54 +82,52 @@
 	</nav>
 
 	<div class="container cuerpo">
-		<h1>Lista de usuarios</h1>
+		<h1>Lista de Editoriales</h1>
 		<br>
 		
 		<div th:if="${param.exito}">
-		    <div class="alert alert-info">Se ha registrado el usuario a la base de datos</div>
+		    <div class="alert alert-info">Se ha registrado la editorial a la base de datos</div>
 		</div>
 		<div th:if="${param.editado}">
-		 	<div class="alert alert-info" style="background-color: greenyellow;">Se ha editado el usuario a la base de datos</div>
+		 	<div class="alert alert-info" style="background-color: greenyellow;">Se ha editado la editorial a la base de datos</div>
 		</div>
 		<div th:if="${param.eliminar}">
-			<div class="alert alert-danger">Se ha eliminado el usuario a la base de datos</div>
+			<div class="alert alert-danger">Se ha eliminado la editorial a la base de datos</div>
 		</div>
 		
 		<br> <br>
 
-		<th:block th:if="${listausu.isEmpty()}">
-			<p>No hay usuarios disponibles.</p>
+		<th:block th:if="${listaeditorial.isEmpty()}">
+			<p>No hay editoriales disponibles.</p>
 		</th:block>
-		<div class="table-responsive" th:unless="${listausu.isEmpty()}">
+		<div class="table-responsive" th:unless="${listaeditorial.isEmpty()}">
 			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Nombre Completo</th>
-						<th>Email</th>
-						<th>DNI</th>
-						<th>Celular</th>
-						<th>Dirección</th>
-						<th>Distrito</th>
+						<th>Nombre</th>
+						<th>Descripcion</th>
+						<th>telefono</th>
+						<th>distrito</th>
+						<th>ubicacion</th>
 						<th>Acciones</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="usuario : ${listausu}">
-						<td th:text="${usuario.id}"></td>
-						<td th:text="${usuario.nombre} + ' ' + ${usuario.apellido}"></td>
-						<td th:text="${usuario.email}"></td>
-						<td th:text="${usuario.dni}"></td>
-						<td th:text="${usuario.celular}"></td>
-						<td th:text="${usuario.ubigeo.distrito}"></td>
-						<td th:text="${usuario.ubigeo.ubicacion}"></td>
+					<tr th:each="editorial : ${listaeditorial}">
+						<td th:text="${editorial.id}"></td>
+						<td th:text="${editorial.nombre}"></td>
+						<td th:text="${editorial.descripcion}"></td>
+						<td th:text="${editorial.telefono}"></td>
+						<td th:text="${editorial.ubigeo.distrito}"></td>
+						<td th:text="${editorial.ubigeo.ubicacion}"></td>
 						<td>
-							<a th:href="@{/usuario/{id}/editar(id=${usuario.id})}" method="get" class="btn btn-primary">Editar</a>
+							<a th:href="@{/editorial/{id}/editar(id=${editorial.id})}" method="get" class="btn btn-primary">Editar</a>
 							<br>
-							<form th:action="@{/usuario/{id}/eliminar(id=${usuario.id})}" method="post"
+							<form th:action="@{/editorial/{id}/eliminar(id=${editorial.id})}" method="post"
 								style="display: inline;">
 								<button type="submit" class="btn btn-danger"
-									onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">Eliminar</button>
+									onclick="return confirm('¿Estás seguro de que deseas eliminar este autor?')">Eliminar</button>
 							</form>
 						</td>
 					</tr>

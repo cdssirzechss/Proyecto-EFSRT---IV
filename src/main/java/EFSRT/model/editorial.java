@@ -23,6 +23,8 @@ public class editorial {
 	private Long id;
 	
 	private String nombre;
+	private String descripcion;
+	private String telefono;
 	
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name= "ubigeo_id" , referencedColumnName = "id")

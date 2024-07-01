@@ -1,130 +1,138 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-<head>
-    <meta charset="utf-8">
-    <title>Inicio</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+		<link href="/css/styles.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+			   <h1>Libreria La Gris</h1>
+		   	</div>
+			<nav>
+			   <ul>
+			     <li><a href="#">TIENDA</a></li>
+			     <li><a href="#">LIBROS PERUANOS</a></li>
+			     <li><a href="#">OFERTAS</a></li>
+			     <li><a href="#">NOSOTROS</a></li>
+			     <li><a href="#">CONTÁCTANOS</a></li>
+			   </ul>
+			</nav>
+			<div class="search-bar">
+			   <input type="text" placeholder="Buscar productos">
+			   <button type="submit">
+			     <i class="fas fa-search"></i>
+			   </button>
+			</div>
+			<div class="user-actions">
+			   <a href="#" class="user-icon"><i class="far fa-user"></i></a>
+			   <a href="#" class="wishlist-icon">
+			     <i class="far fa-heart"></i>
+			     <span class="badge">0</span>
+			   </a>
+			   <a href="#" class="cart-icon">
+			     <i class="fas fa-shopping-cart"></i>
+			     <span class="badge">0</span>
+			     <span class="price">S/0.00</span>
+			   </a>
+			</div>
+		</header>
+		
+		<!--Slider-->
+		<div class="hero">
+		        <div class="slider">
+		            <div class="container">
+		                <!-- slide item -->
+		                <div class="slide active">
+		                    <div class="info">
+		                        <div class="info-content">
+		                            <h3 class="top-down">
+										J. K. Rowling
+		                            </h3>
+		                            <h2 class="top-down trans-delay-0-2">
+		                                Harry Potter y la piedra filosofal
+		                            </h2>
+		                            <p class="top-down trans-delay-0-4">
+										Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley. Harry se siente muy triste y solo, hasta que un buen día recibe una carta que cambiará su vida para siempre.En ella le comunican que ha sido aceptado comoalumno en el colegio interno Hogwarts de magia y hechicería. A partir de ese momento, la suerte de Harry da un vuelco espectacular.En esa escuela tan especial aprenderá encantamientos, trucos fabulosos y tácticas de defensa contra las malas artes.
+		                            </p>
+		                            <div class="top-down trans-delay-0-6">
+		                                <button class="btn-flat btn-hover">
+		                                    <span>VER MÁS</span>
+		                                </button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="img top-down">
+		                        <img src="/img/harry-potter-1.jpg" alt="">
+		                    </div>
+		                </div>
+		                <!-- end slide item -->
+		                <!-- slide item -->
+		                <div class="slide">
+		                    <div class="info">
+		                        <div class="info-content">
+		                            <h3 class="top-down">
+		                                Rosa Cerna Guardia
+		                            </h3>
+		                            <h2 class="top-down trans-delay-0-2">
+		                                Los días de Carbón
+		                            </h2>
+		                            <p class="top-down trans-delay-0-4">
+		                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A optio, voluptatum aperiam nobis quis maxime corporis porro alias soluta sunt quae consectetur aliquid blanditiis perspiciatis labore cumque, ullam, quam eligendi!
+		                            </p>
+		                            <div class="top-down trans-delay-0-6">
+		                                <button class="btn-flat btn-hover">
+		                                    <span>VER MÁS</span>
+		                                </button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="img right-left">
+		                        <img src="/img/los-dias-de-carbon.jpg" alt="">
+		                    </div>
+		                </div>
+		                <!-- end slide item -->
+		                <!-- slide item -->
+		                <div class="slide">
+		                    <div class="info">
+		                        <div class="info-content">
+		                            <h3 class="top-down">
+		                                Santiago Roncagliolo
+		                            </h3>
+		                            <h2 class="top-down trans-delay-0-2">
+		                                Abril rojo
+		                            </h2>
+		                            <p class="top-down trans-delay-0-4">
+		                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo aut fugiat, libero magnam nemo inventore in tempora beatae officiis temporibus odit deserunt molestiae amet quam, asperiores, iure recusandae nulla labore!
+		                            </p>
+		                            <div class="top-down trans-delay-0-6">
+		                                <button class="btn-flat btn-hover">
+		                                    <span>VER MÁS</span>
+		                                </button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="img left-right">
+		                        <img src="/img/abril-rojo.jpg" alt="">
+		                    </div>
+		                </div>
+		                <!-- end slide item -->
+		            </div>
+		            <!-- slider controller -->
+		            <button class="slide-controll slide-next">
+						<i class='bx bxs-chevron-right'></i>
+		            </button>
+		            <button class="slide-controll slide-prev">
+						<i class='bx bxs-chevron-left'></i>
+		            </button>
+		            <!-- end slider controller -->
+		        </div>
+		    </div>
+		
+		<!--end Slider-->
 
-        .navbar {
-            background-color: #343a40 !important;
-        }
-
-        .navbar-brand {
-            color: #ffffff !important;
-            font-weight: bold;
-        }
-
-        .navbar-nav .nav-link {
-            color: #ffffff !important;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #adb5bd !important;
-        }
-
-        .table thead {
-            background-color: #343a40;
-            color: #ffffff;
-        }
-
-        .table th,
-        .table td {
-            border-color: #dee2e6;
-            vertical-align: middle;
-        }
-
-        .table-striped tbody tr:nth-of-type(odd) {
-            background-color: #f8f9fa;
-        }
-
-        .table-striped tbody tr:nth-of-type(even) {
-            background-color: #e9ecef;
-        }
-
-        .table-striped tbody tr:hover {
-            background-color: #d1d8e0;
-        }
-
-        .container {
-            margin-top: 80px;
-        }
-
-        .footer {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 20px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#" th:href="@{/}">Registro e inicio de sesión</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item" sec:authorize="isAuthenticated()">
-                        <a class="nav-link" th:href="@{/logout}">Cerrar sesión</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <h1>//</h1>
-        <br>
-        <h4>
-            Bienvenido <span sec:authentication="principal.username"></span>
-            Su Rol es <span th:text="${rol}"></span>
-        </h4>
-        <br> <br>
-        <div class="table-responsive">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Email</th>
-                        <th>DNI</th>
-                        <th>Celular</th>
-                        <th>Dirección</th>
-                        <th>Distrito</th>
-                        <th>Rol</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="usuario : ${usuarios}">
-                        <td th:text="${usuario.id}"></td>
-                        <td th:text="${usuario.nombre}"></td>
-                        <td th:text="${usuario.apellido}"></td>
-                        <td th:text="${usuario.email}"></td>
-                        <td th:text="${usuario.dni}"></td>
-                        <td th:text="${usuario.celular}"></td>
-                        <td th:text="${usuario.ubigeo.distrito}"></td>
-                        <td th:text="${usuario.ubigeo.ubicacion}"></td>
-                        <td th:text="${usuario.rol.nombre}"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-</body>
+		<script src="/js/index.js"></script>
+	</body>
 </html>

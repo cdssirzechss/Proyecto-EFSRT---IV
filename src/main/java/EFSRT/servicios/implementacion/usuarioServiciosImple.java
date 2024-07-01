@@ -52,11 +52,13 @@ public class usuarioServiciosImple implements usuarioServicios{
 		
 	}
 
+	@Override
 	public usuario obtenerusuarioporid(Long id) {
 		// TODO Auto-generated method stub
 		return usuRepo.findById(id).orElseThrow(() -> new RuntimeException("usuario no encontrado con ID: " + id));
 	}
 
+	@Override
 	public void eliminar(Long id) {
 		usuRepo.deleteById(id);
 	}

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import EFSRT.model.rol;
 import EFSRT.model.usuario;
-import EFSRT.model.dto.UsuarioDTO;
 import EFSRT.repositorio.UsuarioRepositorio;
 import EFSRT.servicios.implementacion.rolServiceImplement;
 import EFSRT.servicios.implementacion.usuarioServiciosImple;
